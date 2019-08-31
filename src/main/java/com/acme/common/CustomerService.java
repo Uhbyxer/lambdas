@@ -10,6 +10,9 @@ public class CustomerService {
 		customers.add(new Customer("John", "Doe", 17, "Mr", asList("USD", "UAH")));
 		customers.add(new Customer("Joanne", "Doe", 28, "Ms", asList("USD", "EUR")));
 		customers.add(new Customer("Freddy", "Smith", 30, "Dr", asList("EUR")));
+		customers.add(new Customer("Alfred", "Smith", 30, "Dr", asList("EUR", "USD")));
+		customers.add(new Customer("Alfred", "Smith", 30, "Dr", asList("EUR")));
+		customers.add(new Customer("Alfred", "Smith", 30, "Dr", asList("EUR", "UAH")));
 
 		return customers;
 	}
