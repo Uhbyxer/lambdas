@@ -2,6 +2,7 @@ package com.acme.optional;
 
 import com.acme.common.Customer;
 
+import java.util.Collections;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -31,6 +32,15 @@ public class OptionalDemo {
 		//Optional.empty
 		Optional<Object> empty = Optional.empty();
 		System.out.println(empty);
+
+		Customer nullCustomer = null;
+		Optional<Customer> nullOptional = Optional.ofNullable(nullCustomer);
+		//
+		Customer alternativeCustomer = nullOptional.orElse(new Customer("empty", "", 0, "", Collections.emptyList()));
+		System.out.println("Alternative: " + alternativeCustomer);
+		System.out.println(nullOptional.orElseGet(() -> alternativeCustomer));
+
+		nullOptional.orElseThrow(RuntimeException::new);
 
 	}
 }
